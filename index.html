@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DRG Servicio Técnico</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <section class="promo-bar">
+    <p> ¡Obtené tu descuento por contratación online!</p>
+    <a href="#contacto" class="promo-btn">Obtener oferta</a>
+ </section>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="public/logo.png" alt="DRG Servicio Técnico" />
+        </div>
+
+        <!-- BOTÓN HAMBURGUESA -->
+        <button class="menu-toggle" id="menu-toggle">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#sobre">Sobre Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <section class="hero-full">
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="public/video/fondo.mp4" type="video/mp4" />
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-text">
+        <h1>Tu PC en Manos Profesionales</h1>
+        <p>Diagnóstico sin cargo • Armado y reparación de PC • Mantenimiento integral.</p>
+    </div>
+</section>
+
+    <main>
+        <section id="servicios" class="section servicios">
+            <h2>Servicios</h2>
+            <p>Armado y reparación profesional de PC, mantenimiento preventivo, actualización de hardware, instalación de software y más.</p>
+            <ul>
+                <li>Reparación de PC y Notebooks</li>
+                <li>Armado de computadoras a medida</li>
+                <li>Mantenimiento y limpieza interna</li>
+                <li>Instalación y optimización de Windows</li>
+                <li>Actualización de hardware</li>
+            </ul>
+        </section>
+
+        <section id="sobre" class="section sobre-nosotros">
+            <h2>Sobre Nosotros</h2>
+            <p>En <strong>DRG Servicio Técnico</strong> contamos con amplia experiencia en armado, reparación y mantenimiento de computadoras. Trabajamos con responsabilidad, diagnóstico preciso y soluciones rápidas.</p>
+            <p>Nos enfocamos en ofrecer un servicio confiable y profesional para particulares y empresas.</p>
+        </section>
+
+        <section id="contacto" class="section contacto">
+            <h2>Contacto</h2>
+            <p>¿Necesitás asistencia técnica? Estamos para ayudarte.</p>
+            <ul>
+                <li><strong>WhatsApp:</strong> 11-0000-0000</li>
+                <li><strong>Email:</strong> contacto@drgservicio.com</li>
+                <li><strong>Horario:</strong> Lunes a Sábado de 9 a 19 hs</li>
+            </ul>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <p><strong>DRG Servicio Técnico</strong> — Armado y reparación profesional de PC</p>
+        <p>© 2025 Todos los derechos reservados.</p>
+        <p><a href="#contacto">Contacto</a></p>
+    </footer>
+    
+    <!-- WhatsApp -->
+<a href="https://wa.me/5491124174863" class="wa-float" target="_blank" rel="noopener">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+</a>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,445 @@
+:root {
+    /* Paleta principal */
+    --color-primary: #3bb7be;
+    --color-secondary: #041219;
+
+    /* Paleta complementaria */
+    --color-accent-1: #348494;
+    --color-accent-2: #243e45;
+    --color-accent-3: #4e6a6f;
+
+    /* Colores neutrales */
+    --color-white: #f7f7f7;
+    --color-gray-1: #847c7c;
+    --color-gray-2: #848684;
+    --color-gray-3: #4c5453;
+    --color-gray-4: #474949;
+
+    /* Tipografía */
+    --font-main: "Inter", Arial, sans-serif;
+
+    /* Layout */
+    --container-width: 1200px;
+    --transition: 0.3s ease;
+
+    /* Alturas */
+    --height-promo-bar: 40px;
+    --height-navbar: 90px;
+}
+
+/* ------------------------------ */
+/* RESET                          */
+/* ------------------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: black;
+    color: var(--color-secondary);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ------------------------------ */
+/* NAVBAR                         */
+/* ------------------------------ */
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--color-secondary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .logo img {
+    height: 70px;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 101;
+}
+
+/* Enlaces desktop */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;  /* Reducido el gap entre los elementos */
+}
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: var(--color-white);
+    font-weight: 600;
+    padding: 0.6rem 0;
+    transition: var(--transition);
+}
+
+/* Barra decorativa */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
+}
+
+/* ========================= */
+/* MENÚ HAMBURGUESA (MÓVIL)  */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 0.8rem 1rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Menú colapsado en móvil */
+    .nav-links {
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        background: var(--color-secondary);
+        text-align: center;
+        margin-top: 0;
+        position: absolute;  /* Para que no desplace el contenido */
+        top: 85px; /* Justo debajo de la barra de navegación */
+        left: 0;
+        right: 0;
+    }
+
+    /* Menú abierto */
+    .nav-links.open {
+        display: flex;
+    }
+
+    /* Ajuste de padding en los enlaces del menú */
+    .nav-links a {
+        padding: 0.8rem 1.2rem; /* Menos espacio entre texto */
+        display: block;
+        width: 100%;
+    }
+
+    /* Cambiar la altura del video y el contenedor hero al abrir el menú */
+    .hero-full {
+        height: calc(100vh - (var(--height-promo-bar) + 90px));  /* Ajustamos la altura */
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .promo-bar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .hero-full {
+        height: calc(100vh - (60px + 65px));
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* ------------------------------ */
+/* SECCIONES                      */
+/* ------------------------------ */
+
+.section {
+    max-width: var(--container-width);
+    margin: auto;
+    padding: 4rem 1rem;
+}
+
+.section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.section p,
+.section ul li {
+    color: var(--color-gray-3);
+}
+
+.servicios ul {
+    margin-top: 1rem;
+    list-style: none;
+}
+
+.sobre-nosotros p {
+    margin-bottom: 1rem;
+}
+
+.contacto ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.contacto li {
+    padding: 0.5rem 0;
+}
+
+/* ------------------------------ */
+/* FOOTER                         */
+/* ------------------------------ */
+
+.footer {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+}
+
+.footer a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    opacity: 0.7;
+}
+
+/* ------------------------------ */
+/* PROMO BAR                      */
+/* ------------------------------ */
+
+.promo-bar {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 0.4rem 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.promo-btn {
+    padding: 0.3rem 0.8rem;
+    background: var(--color-secondary);
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 4px;
+    animation: pulse 1.6s infinite ease-in-out;
+    transition: var(--transition);
+}
+
+.promo-btn:hover {
+    animation-play-state: paused;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* ------------------------------ */
+/* HERO VIDEO                     */
+/* ------------------------------ */
+
+.hero-full {
+    position: relative;
+    min-height: calc(100vh - (var(--height-promo-bar) + var(--height-navbar)));
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: -1;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-white);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+}
+
+
+/* === Botón de WhatsApp === */
+
+.wa-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 999;
+  border-radius: 50%;
+  background-color: #25D366; /* color verde WhatsApp */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.wa-float img {
+  width: 100%;
+  height: auto;
+}
+
+.wa-float:hover {
+  transform: scale(1.1);
+}
+
+
+
+
+/* ------------------------------ */
+/* RESPONSIVE NAVBAR              */
+/* ------------------------------ */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 0.8rem 1rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        background: var(--color-secondary);
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        border-top: 1px solid var(--color-accent-2);
+        padding: 1rem 0;
+        width: 100%;
+    }
+
+    .nav-links a {
+        padding: 1rem 0;
+        display: block;
+        width: 100%;
+    }
+
+    .hero-full {
+        height: calc(100vh - (var(--height-promo-bar) + 70px));
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .promo-bar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .hero-full {
+        height: calc(100vh - (60px + 65px));
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+}
