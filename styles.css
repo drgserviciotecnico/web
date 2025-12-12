@@ -443,3 +443,14 @@ img {
         font-size: 0.9rem;
     }
 }
+
+
+/* Mostrar SOLO video desktop */
+.desktop-video { display: block; }
+.mobile-video { display: none; }
+
+@media (max-width: 768px) {
+    /* En móviles mostrar SOLO el video mobile */
+    .desktop-video { display: none; }
+    .mobile-video { display: block; }
+}
