@@ -231,6 +231,9 @@ img {
     padding: 0.5rem 0;
 }
 
+
+
+
 /* ------------------------------ */
 /* FOOTER                         */
 /* ------------------------------ */
@@ -338,6 +341,120 @@ img {
 
 .hero-text p {
     font-size: 1.2rem;
+}
+
+
+/* ===== SOBRE NOSOTROS – MODERNO / PROFESIONAL ===== */
+
+.sobre-nosotros {
+    background: linear-gradient(180deg, #0a1c22 0%, #041219 100%);
+    padding: 5rem 1.2rem;
+}
+
+.sobre-container {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Logo arriba del título */
+.sobre-logo img {
+    max-width: 200px;
+    margin: 0 auto 2rem;
+}
+
+/* Título */
+.sobre-texto h2 {
+    color: var(--color-white);
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+/* Texto principal */
+.sobre-texto p {
+    color: #cfd8dc !important;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 1.2rem;
+}
+
+/* LISTA DE VALORES CENTRADA */
+.sobre-lista {
+    list-style: none;         /* elimina los puntos por defecto */
+    padding-left: 0;
+    margin: 2rem auto 0;      /* centramos horizontalmente */
+    display: inline-block;    /* ajusta el ancho al contenido */
+    text-align: left;         /* el texto dentro de cada item sigue alineado a la izquierda */
+}
+
+.sobre-lista li {
+    position: relative;
+    padding-left: 2rem;       /* espacio para el check */
+    margin-bottom: 1rem;
+    color: #e6f2f3 !important;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Agregamos un "check" simple antes del texto */
+.sobre-lista li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .sobre-nosotros {
+        padding: 4rem 1rem;
+    }
+
+    .sobre-texto h2 {
+        font-size: 2.1rem;
+    }
+
+    .sobre-texto p {
+        font-size: 1rem;
+    }
+
+    .sobre-lista {
+        display: inline-block;
+        margin: 2rem auto 0;
+    }
+
+    .sobre-lista li {
+        padding-left: 2rem;
+    }
+}
+
+
+
+
+
+
+/* ===== HERO CTA WHATSAPP ===== */
+
+.hero-cta {
+    display: inline-block;
+    margin-top: 1.4rem;
+    padding: 0.9rem 1.8rem;
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.hero-cta:hover {
+    background: #2fa0a7;
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
 }
 
 
