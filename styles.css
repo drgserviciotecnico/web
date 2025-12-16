@@ -234,6 +234,132 @@ img {
 
 
 
+/* ===== CONTACTO MODERNO COMPLETO ===== */
+
+.contacto {
+  background: linear-gradient(180deg, #041219 0%, #243e45  100%); /* degradado más evidente */
+  color: var(--color-white);
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.contacto h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+}
+
+.contacto p {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  color: #cfd8dc;
+}
+
+/* Grid de contacto */
+.contacto-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Items de contacto */
+.contacto-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contacto-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+}
+
+/* Iconos SVG blancos */
+.contacto-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1rem;
+  filter: brightness(0) invert(1); /* convierte cualquier SVG oscuro en blanco */
+}
+
+/* Títulos y textos */
+.contacto-item p {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.contacto-item a, .contacto-item span {
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Hover para enlaces de contacto */
+.contacto-item a:hover {
+  text-decoration: underline;
+}
+
+/* ==================== */
+/* RESPONSIVE            */
+/* ==================== */
+@media (max-width: 1024px) {
+  .contacto-grid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacto-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .contacto-item {
+    width: 80%;
+    padding: 1.8rem;
+  }
+
+  .contacto h2 {
+    font-size: 2.2rem;
+  }
+
+  .contacto p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contacto-item {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .contacto h2 {
+    font-size: 2rem;
+  }
+
+  .contacto p {
+    font-size: 0.95rem;
+  }
+
+  .contacto-item img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+
+
 /* ------------------------------ */
 /* FOOTER                         */
 /* ------------------------------ */
